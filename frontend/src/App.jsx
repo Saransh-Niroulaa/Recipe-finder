@@ -25,14 +25,17 @@ function App() {
     setRecipes([]); // clear previous results
 
     try {
+      // Base API URL from environment variable or default to localhost
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
       // Choose API endpoint based on current tab
       let endpoint = '';
       if (currentTab === 'ingredients') {
-        endpoint = `http://localhost:5000/api/recipes/search?ingredients=${encodeURIComponent(searchInput)}`;
+        endpoint = `${API_URL}/api/recipes/search?ingredients=${encodeURIComponent(searchInput)}`;
       } else if (currentTab === 'name') {
-        endpoint = `http://localhost:5000/api/recipes/search?name=${encodeURIComponent(searchInput)}`;
+        endpoint = `${API_URL}/api/recipes/search?name=${encodeURIComponent(searchInput)}`;
       } else if (currentTab === 'random') {
-        endpoint = `http://localhost:5000/api/recipes/random`;
+        endpoint = `${API_URL}/api/recipes/random`;
       }
 
       const response = await fetch(endpoint); // make API request
