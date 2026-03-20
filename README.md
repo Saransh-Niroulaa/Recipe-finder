@@ -2,12 +2,12 @@
 
 A full-stack recipe search application powered by the Spoonacular API.
 
-## 🚀 Live Demo
+## Deployed at
 
 - **Frontend:** [https://recipe-finder-tau-wheat.vercel.app/](https://recipe-finder-tau-wheat.vercel.app/)
 - **Backend:** [https://recipe-finder-dojv.onrender.com/](https://recipe-finder-dojv.onrender.com/)
 
-## 🛠 Features
+## Features
 
 - Search recipes by ingredients.
 - Search recipes by name.
@@ -15,13 +15,13 @@ A full-stack recipe search application powered by the Spoonacular API.
 - Detailed recipe information including ingredients and instructions.
 - Fully responsive design.
 
-## 🏗 Tech Stack
+## Tech Stack
 
 - **Frontend:** React, Vite, CSS
 - **Backend:** Node.js, Express, Axios
 - **API:** [Spoonacular API](https://spoonacular.com/food-api)
 
-## 🔧 Local Setup
+## Local Setup
 
 ### Prerequisites
 - Node.js installed on your machine.
@@ -42,6 +42,3 @@ A full-stack recipe search application powered by the Spoonacular API.
 2. Run `npm install`.
 3. Create a `.env` file (optional for local) or rely on the default `localhost:5000`.
 4. Run `npm run dev`.
-
-## 📜 License
-ISC
