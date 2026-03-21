@@ -10,7 +10,12 @@ function RecipeDetails({ recipeId, onBack }) {
     const fetchDetails = async () => {
       try {
         setLoading(true);
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        
+        if (API_URL.endsWith('/')) {
+          API_URL = API_URL.slice(0, -1);
+        }
+
         const response = await fetch(`${API_URL}/api/recipes/${recipeId}`);
         if (!response.ok) throw new Error('Failed to fetch details');
         

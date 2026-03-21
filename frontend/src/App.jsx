@@ -26,7 +26,12 @@ function App() {
 
     try {
       // Base API URL from environment variable or default to localhost
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      
+      // Remove trailing slash if it exists to prevent double slashes in endpoints
+      if (API_URL.endsWith('/')) {
+        API_URL = API_URL.slice(0, -1);
+      }
 
       // Choose API endpoint based on current tab
       let endpoint = '';
